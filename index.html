@@ -1,0 +1,409 @@
+import React, { useState } from 'react';
+import { Shield, CheckCircle, Target, FileCheck, Truck, Lock, Phone, Mail, MapPin, ArrowRight, AlertTriangle } from 'lucide-react';
+
+export default function PMCConsultingLanding() {
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    phone: '',
+    email: '',
+    projectType: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
+  const handleChange = (e) => {
+    setFormData({...formData, [e.target.name]: e.target.value});
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      {/* Hero Section */}
+      <header className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-slate-900/20"></div>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center space-y-6">
+            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 rounded-full px-6 py-2 mb-4">
+              <Shield className="w-5 h-5 text-blue-400" />
+              <span className="text-blue-300 text-sm font-medium">33년 군 병참장교 경력 전문가</span>
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              33년 군수 경험이 담보하는<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">'빈틈없는 통제'</span>
+            </h1>
+            
+            <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto">
+              PMC 및 국방 프로젝트의 리스크를<br className="sm:hidden" /> <span className="text-blue-400 font-semibold">0%에 수렴</span>시키십시오
+            </p>
+            
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 max-w-3xl mx-auto">
+              <p className="text-slate-300 text-lg leading-relaxed">
+                국방부/방사청 계약 절차, 작전 병참, 군수 자산 보안 관리까지.<br />
+                최고 수준의 군사 행정 및 물류 전문가가 귀사의 프로젝트 성공을 설계합니다.
+              </p>
+            </div>
+            
+            <div className="pt-8">
+              <a href="#contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold px-8 py-4 rounded-full text-lg shadow-xl shadow-blue-500/30 transition-all transform hover:scale-105">
+                무료 프로젝트 리스크 진단 받기
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Problem Statement - Daejeon/Sejong Focus */}
+      <section className="py-16 bg-slate-800/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 text-cyan-400 mb-4">
+              <MapPin className="w-5 h-5" />
+              <span className="font-semibold">대전/세종 지역 특화</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              국방/방산 중소기업의 성장통 해소 전문가
+            </h2>
+            <p className="text-slate-400 text-lg">
+              지금 국방 관련 프로젝트 수행 중이라면, 다음 문제에 직면하고 계실 수 있습니다
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-red-900/20 border border-red-500/30 rounded-xl p-6">
+              <AlertTriangle className="w-12 h-12 text-red-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">기록 미비 리스크</h3>
+              <p className="text-slate-300">
+                납기 지연보다 무서운 '기록 미비'로 인한 행정 감사 리스크
+              </p>
+            </div>
+
+            <div className="bg-orange-900/20 border border-orange-500/30 rounded-xl p-6">
+              <AlertTriangle className="w-12 h-12 text-orange-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">규격 불일치 손실</h3>
+              <p className="text-slate-300">
+                계약 규격과 군납 규격의 차이로 발생하는 불필요한 재작업 및 비용 손실
+              </p>
+            </div>
+
+            <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-xl p-6">
+              <AlertTriangle className="w-12 h-12 text-yellow-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">전문가 부재</h3>
+              <p className="text-slate-300">
+                병참/물류 전문가 부재로 인한 해외 프로젝트의 비효율적인 자원 운영
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us Section */}
+      <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              경험의 깊이가 프로젝트의 성공률을 결정합니다
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              33년, 단 한 건의 실수도 허용하지 않았던<br />
+              <span className="text-blue-400 font-semibold">군(軍) 표준 프로세스</span>를 이식합니다
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center">
+                    <FileCheck className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-3">조달 및 계약 프로세스 통제</h3>
+                  <p className="text-slate-400 mb-4">
+                    정확한 군 행정 및 계약 절차에 대한 깊이 있는 이해와 33년간의 수행 경험
+                  </p>
+                  <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+                    <p className="text-blue-300 font-medium">
+                      ✓ 감사 리스크 제로: 국방부/방사청 감사 및 행정 소송 대비 표준 매뉴얼 확보로, 행정 리스크를 원천 차단
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-cyan-500/50 transition-all">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center">
+                    <Truck className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-3">작전/프로젝트 병참 지원</h3>
+                  <p className="text-slate-400 mb-4">
+                    위기 상황 시 조직 관리 및 물류 프로세스 개선을 통해 성과를 극대화했던 경험
+                  </p>
+                  <div className="bg-cyan-900/20 border border-cyan-500/30 rounded-lg p-4">
+                    <p className="text-cyan-300 font-medium">
+                      ✓ 중단 없는 프로젝트: 비상 보급망 및 자원 재배치 Contingency Plan 설계로, 해외 및 격오지 프로젝트의 납기 지연 방지
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-purple-500/50 transition-all">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center">
+                    <Lock className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-3">보안 및 자산 통제 시스템</h3>
+                  <p className="text-slate-400 mb-4">
+                    군수품의 정밀한 재고 통제 및 보안 감사 대응 노하우
+                  </p>
+                  <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
+                    <p className="text-purple-300 font-medium">
+                      ✓ 비용 절감 및 보안 강화: 고가 장비, 기밀 문서의 군수 수준 정밀 통제로 손실 방지 및 국제 프로젝트 보안 규정 완벽 준수
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Services */}
+      <section className="py-20 bg-slate-800/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              귀사의 프로젝트에 최적화된<br />3가지 핵심 통제 모듈
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all">
+              <div className="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-3xl font-bold text-blue-400">01</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">
+                완벽한 국방 계약 및<br />행정 통제 시스템 구축
+              </h3>
+              <p className="text-slate-400 mb-6">
+                국방 계약 절차, 납품 규격, 대금 청구 및 행정 감사 대비를 위한 표준화된 매뉴얼 및 기록 보존 시스템 구축
+              </p>
+              <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+                <p className="text-sm text-blue-300 font-medium">
+                  → 복잡한 군수 행정 절차를 누구나 이해하고 수행 가능한 A-Z 매뉴얼(SOP)로 완성
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-cyan-500/50 transition-all">
+              <div className="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-3xl font-bold text-cyan-400">02</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">
+                위기 대응 작전 병참 기획<br />(Logistics Contingency)
+              </h3>
+              <p className="text-slate-400 mb-6">
+                PMC, 해외 프로젝트 시 필요한 보급품, 장비, 인력의 이동 및 비축 계획을 33년 병참 노하우로 설계
+              </p>
+              <div className="bg-cyan-900/20 border border-cyan-500/30 rounded-lg p-4">
+                <p className="text-sm text-cyan-300 font-medium">
+                  → 예기치 않은 상황 발생 시에도 물류 공급이 끊기지 않는 비상 작전 계획서 확보
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-2xl p-8 hover:border-purple-500/50 transition-all">
+              <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-3xl font-bold text-purple-400">03</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">
+                군수 수준의 자산 및<br />보안 통제 체계 이식
+              </h3>
+              <p className="text-slate-400 mb-6">
+                고가 장비, 기밀 문서, 군수 물자에 준하는 자산의 입출고 통제 및 정밀 재고 관리 시스템 구축
+              </p>
+              <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
+                <p className="text-sm text-purple-300 font-medium">
+                  → 재고 오차율 최소화 및 기밀 유출 방지를 통한 재무적/보안적 안정성 극대화
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section id="contact" className="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              프로젝트의 행정 및 병참 리스크를 제거하고,<br />성공에만 집중하십시오
+            </h2>
+            <p className="text-xl text-slate-300">
+              귀사의 프로젝트 성공 가능성을 진단해 드립니다
+            </p>
+          </div>
+
+          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
+            {submitted ? (
+              <div className="text-center py-12">
+                <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-white mb-2">신청이 완료되었습니다!</h3>
+                <p className="text-slate-300">빠른 시일 내에 연락드리겠습니다.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">성함 *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                      placeholder="홍길동"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">회사명 *</label>
+                    <input
+                      type="text"
+                      name="company"
+                      required
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                      placeholder="(주)국방산업"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">연락처 *</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                      placeholder="010-1234-5678"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">이메일 *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                      placeholder="example@company.com"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">프로젝트 유형</label>
+                  <select
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                  >
+                    <option value="">선택해주세요</option>
+                    <option value="pmc">PMC 프로젝트</option>
+                    <option value="defense">국방 조달/계약</option>
+                    <option value="overseas">해외 프로젝트 병참</option>
+                    <option value="security">자산/보안 통제</option>
+                    <option value="other">기타</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold px-8 py-4 rounded-lg text-lg shadow-xl shadow-blue-500/30 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2"
+                >
+                  무료 프로젝트 리스크 진단 신청하기
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+
+                <p className="text-sm text-slate-400 text-center">
+                  * 제출하신 정보는 컨설팅 상담 목적으로만 사용되며, 안전하게 보관됩니다
+                </p>
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-slate-900 border-t border-slate-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Shield className="w-8 h-8 text-blue-400" />
+                <span className="text-xl font-bold text-white">PMC 전문 컨설팅</span>
+              </div>
+              <p className="text-slate-400">
+                33년 군 병참장교 경력 기반<br />프로젝트 관리 전문 서비스
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4">연락처</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-slate-400">
+                  <Phone className="w-4 h-4" />
+                  <span>010-XXXX-XXXX</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-400">
+                  <Mail className="w-4 h-4" />
+                  <span>contact@pmc-consulting.kr</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-400">
+                  <MapPin className="w-4 h-4" />
+                  <span>대전/세종 지역 기반</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4">서비스 영역</h4>
+              <ul className="space-y-2 text-slate-400">
+                <li>• 국방 계약/조달 컨설팅</li>
+                <li>• PMC 프로젝트 관리</li>
+                <li>• 작전 병참 기획</li>
+                <li>• 자산/보안 통제 시스템</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+            <p>© 2024 PMC 프로젝트 관리 컨설팅. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
